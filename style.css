@@ -1,68 +1,247 @@
-#navigation{
-    background-color: #36E9C3;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.navigation_font{
-    color: white;
-    font-family:'Comic sans MS';
+html {
+    scroll-behavior: smooth;
+    background: rgb(0,78,240);
+    background: linear-gradient(90deg, rgba(0,78,240,0.6731734930300245) 0%, rgba(238,23,249,0.7011846975118172) 47%, rgba(159,113,47,0.7011846975118172) 100%);
 }
 
-a{
-    color: white;
-    font-size: 25px;
-    font-family: 'Verdana','Courier New', Courier, monospace;
+/* Navigation Bar */
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    justify-content: space-between;
 }
 
-#home{
-    text-align: center;
-    background-color: black;
-    padding: 20px;
-    color: white;
-    font-size: 25px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-#about{
-    width: 100%;
+#navbar::before{
+    content: "";
     background-color: #000000;
-    padding: 20px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width:100%;
+    z-index: -1;
+    opacity: 0.8;
 }
 
-#profilepic{
-    border-radius: 50%;
-    height: 300px;
-    width: 300px;
+/* Navigation Bar: Name */
+#name{
+    margin: 10px 34px;
 }
 
-p{
-    text-align: justify;
-}
-
-#achievements{
-    width: 100%;
-    background-color: #c2c0c3;
-    padding: 10px;
-}
-
-#contacts{
-    background-color: #36E9C3;
-    text-align: center;
-    padding: 20px;
+#name a{
     color: white;
-    font-family: 'Verdana';
-    font-size: 25px;
+    display: block;
+    padding: 3px 50px;
+    border-radius: 20px;
+    text-decoration: none;
 }
 
-h2{
-    font-family:'Comic sans MS';
+/* Navigation Bar: List Styling */
+#navbar ul{
+    display: flex;
+    font-family: cursive;
+    float: right;
+    padding-right: 50px;
 }
 
-.contacts{
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+#navbar ul li{ 
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+
+.active{
+    background: rgb(0,78,240);
+    background: linear-gradient(90deg, rgba(0,78,240,0.6731734930300245) 0%, rgba(238,23,249,0.7011846975118172) 47%, rgba(159,113,47,0.7011846975118172) 100%);
+    border-radius: 20px;
+}
+
+/* Home Section */
+#home {
+    margin: 34px;
+    display: flex;
+}
+#home .box {
+    color: white;
+    padding: 34px;
+    margin: 2px 55px;
+    margin-bottom: 20px;
+}
+
+#home .box img {
+    height: 300px;
+    width: 250px;
+    margin: auto;
+    display: block;
+}
+
+#home .box p {
+    color: white;
+    font-family: "Bree Serif", serif;
+    text-align: justify;
+    font-size: 1.2rem;
+}
+
+/* Hobbies Section  */
+#hobbies-container{
+    padding: 50px;
+}
+
+#hobbies {
+    margin: 34px;
+    display: flex;
+}
+#hobbies .box {
+    padding: 34px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#hobbies .box img {
+    height: 100px;
+    margin: auto;
+    display: block;
+}
+
+#hobbies .box h2 {
+    font-family: "Bree Serif", serif;
+}
+
+/* Skills Section  */
+#skills {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+#skills::before {
+    content: "";
+    position: absolute;
+    background: url("../bg1.jpg") no-repeat center center/cover;
+    height: 642px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+}
+
+#skills h1 {
+    color: white;
+    text-align: center;
+    font-family: "Bree Serif", serif;
+}
+
+#skills h3 {
+    color: white;
+    text-align: center;
+    font-family: "Bree Serif", serif;
+    padding: 15px;
+}
+
+
+.progress-bar {
+    background-color: #d9d9f2;
+    width: 200px;
+    height: 10px;
+}
+
+.skill {
+    background-color: #800080;
+    color: white;
+    text-align: right;
+    height: 10px;
+}
+
+.c-language {
+    width: 94%;
+}
+.C-language {
+    width: 91%;
+}
+.DSA {
+    width: 85%;
+}
+.frontend {
+    width: 88%;
+}
+.pyhton {
+    width: 60%;
+}
+.backend{
+    width: 58%;
+}
+
+
+/* Footer Section  */
+footer {
+    background: black;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+/* Utility Classes */
+.h-primary {
+    font-family: "Bree Serif", serif;
+    font-size: 3.8rem;
+    padding: 15px;
+}
+
+.h-secondary {
+    font-family: "Bree Serif", serif;
+    font-size: 2.3rem;
+    padding: 12px;
+}
+
+.btn {
+    padding: 6px 10px;
+    border: 2px solid white;
+    background-color: #deaeea;
+    margin: 17px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn a:hover{
+    padding: 3px 22px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    color: white;
+    background-color: #800080;
+}
+
+.center {
+    text-align: center;
 }
